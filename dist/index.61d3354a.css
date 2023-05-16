@@ -1,0 +1,80 @@
+body {
+  height: 100vh;
+  background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container {
+  min-width: 400px;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 2px 6px #0000001a;
+}
+
+.new-item-form {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  align-items: center;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.form-row label {
+  margin-right: .5rem;
+}
+
+.form-row input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  margin-right: .5rem;
+  padding: .5rem;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  background-color: teal;
+  border: none;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+}
+
+.btn-del {
+  background-color: #cd5050;
+  margin-right: .5rem;
+  padding: .3rem;
+}
+
+.task-section {
+  padding: 0;
+  list-style: none;
+}
+
+.task-item-container {
+  border-radius: 4px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  display: flex;
+}
+
+.task-item-container span {
+  margin-left: .5rem;
+}
+
+.task-item-container:hover {
+  background-color: #ccc;
+}
+
+.completed {
+  color: #585858;
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=index.61d3354a.css.map */
