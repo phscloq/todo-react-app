@@ -27310,11 +27310,76 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
+var _form = require("../components/form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _taskList = require("../components/TaskList");
+var _taskListDefault = parcelHelpers.interopDefault(_taskList);
 var _s = $RefreshSig$();
 function App() {
     _s();
-    const [task, setTask] = (0, _react.useState)("");
     const [tasks, setTasks] = (0, _react.useState)([]);
+    const deleteTask = (taskId)=>{
+        setTasks(tasks.filter((task)=>task.id !== taskId));
+    };
+    function taskComplete(taskId) {
+        setTasks(tasks.map((task)=>task.id === taskId ? {
+                ...task,
+                checked: !task.checked
+            } : task));
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                tasks: tasks,
+                setTasks: setTasks
+            }, void 0, false, {
+                fileName: "src/App.jsx",
+                lineNumber: 23,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskListDefault.default), {
+                tasks: tasks,
+                deleteTask: deleteTask,
+                taskComplete: taskComplete
+            }, void 0, false, {
+                fileName: "src/App.jsx",
+                lineNumber: 25,
+                columnNumber: 4
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/App.jsx",
+        lineNumber: 21,
+        columnNumber: 8
+    }, this);
+}
+exports.default = App;
+_s(App, "+34uIVDBalDkucWnJ7Aj1Xxb0MA=");
+_c = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$2430.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/form":"97Bz8","../components/TaskList":"9vBT8"}],"97Bz8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f556 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f556.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+function Form({ tasks , setTasks  }) {
+    _s();
+    const [task, setTask] = (0, _react.useState)("");
     const handleSubmit = (e)=>{
         e.preventDefault();
         const newTask = {
@@ -27328,124 +27393,128 @@ function App() {
         ]);
         setTask("");
     };
-    const deleteTask = (taskId)=>{
-        setTasks(tasks.filter((task)=>task.id !== taskId));
-    };
-    function taskComplete(taskId) {
-        setTasks(tasks.map((task)=>task.id === taskId ? {
-                ...task,
-                checked: !task.checked
-            } : task));
-    }
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "container",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleSubmit,
-                className: "new-item-form",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "form-row",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            type: "text",
-                            placeholder: "New Task",
-                            value: task,
-                            id: "item",
-                            onChange: (e)=>setTask(e.target.value)
-                        }, void 0, false, {
-                            fileName: "src/App.jsx",
-                            lineNumber: 28,
-                            columnNumber: 5
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "btn",
-                            type: "submit",
-                            children: "Add"
-                        }, void 0, false, {
-                            fileName: "src/App.jsx",
-                            lineNumber: 31,
-                            columnNumber: 5
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/App.jsx",
-                    lineNumber: 27,
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+        onSubmit: handleSubmit,
+        className: "new-item-form",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "form-row",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "text",
+                    placeholder: "New Task",
+                    value: task,
+                    id: "item",
+                    onChange: (e)=>setTask(e.target.value)
+                }, void 0, false, {
+                    fileName: "components/form.jsx",
+                    lineNumber: 14,
+                    columnNumber: 5
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "btn",
+                    type: "submit",
+                    children: "Add"
+                }, void 0, false, {
+                    fileName: "components/form.jsx",
+                    lineNumber: 17,
                     columnNumber: 5
                 }, this)
-            }, void 0, false, {
-                fileName: "src/App.jsx",
-                lineNumber: 26,
-                columnNumber: 5
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                className: "task-section",
-                children: tasks.map((task)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                        className: "task-item-container",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "task-info",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "checkbox",
-                                        checked: task.checked,
-                                        onChange: ()=>taskComplete(task.id)
-                                    }, void 0, false, {
-                                        fileName: "src/App.jsx",
-                                        lineNumber: 40,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: task.checked ? "completed" : "",
-                                        children: task.description
-                                    }, void 0, false, {
-                                        fileName: "src/App.jsx",
-                                        lineNumber: 43,
-                                        columnNumber: 19
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/App.jsx",
-                                lineNumber: 39,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: ()=>deleteTask(task.id),
-                                className: "btn btn-del",
-                                children: "Del"
-                            }, void 0, false, {
-                                fileName: "src/App.jsx",
-                                lineNumber: 47,
-                                columnNumber: 17
-                            }, this)
-                        ]
-                    }, task.id, true, {
-                        fileName: "src/App.jsx",
-                        lineNumber: 38,
-                        columnNumber: 20
-                    }, this))
-            }, void 0, false, {
-                fileName: "src/App.jsx",
-                lineNumber: 36,
-                columnNumber: 5
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/App.jsx",
-        lineNumber: 24,
-        columnNumber: 8
+            ]
+        }, void 0, true, {
+            fileName: "components/form.jsx",
+            lineNumber: 13,
+            columnNumber: 5
+        }, this)
+    }, void 0, false, {
+        fileName: "components/form.jsx",
+        lineNumber: 12,
+        columnNumber: 13
     }, this);
 }
-exports.default = App;
-_s(App, "5mGQg7guAs5rSlbJvLoFnwVpbYU=");
-_c = App;
+exports.default = Form;
+_s(Form, "cJE39Iugkv77Am2GUaY068Dantw=");
+_c = Form;
 var _c;
-$RefreshReg$(_c, "App");
+$RefreshReg$(_c, "Form");
 
-  $parcel$ReactRefreshHelpers$2430.postlude(module);
+  $parcel$ReactRefreshHelpers$f556.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire7ed4")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"9vBT8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0923 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0923.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+function TaskList({ tasks , taskComplete , deleteTask  }) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+        className: "task-section",
+        children: tasks.map((task, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                className: "task-item-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "task-info",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "checkbox",
+                                checked: task.checked,
+                                onChange: ()=>taskComplete(task.id)
+                            }, void 0, false, {
+                                fileName: "components/TaskList.jsx",
+                                lineNumber: 6,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: task.checked ? "completed" : "",
+                                children: task.description
+                            }, void 0, false, {
+                                fileName: "components/TaskList.jsx",
+                                lineNumber: 9,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/TaskList.jsx",
+                        lineNumber: 5,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        onClick: ()=>deleteTask(task.id),
+                        className: "btn btn-del",
+                        children: "Del"
+                    }, void 0, false, {
+                        fileName: "components/TaskList.jsx",
+                        lineNumber: 13,
+                        columnNumber: 13
+                    }, this)
+                ]
+            }, index, true, {
+                fileName: "components/TaskList.jsx",
+                lineNumber: 4,
+                columnNumber: 25
+            }, this))
+    }, void 0, false, {
+        fileName: "components/TaskList.jsx",
+        lineNumber: 2,
+        columnNumber: 13
+    }, this);
+}
+exports.default = TaskList;
+_c = TaskList;
+var _c;
+$RefreshReg$(_c, "TaskList");
+
+  $parcel$ReactRefreshHelpers$0923.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire7ed4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
